@@ -10,7 +10,13 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = '__all__'
+        exclude = ['cost_price']
 
+class ManagerProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = '__all__'
+        
 class ProductImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
